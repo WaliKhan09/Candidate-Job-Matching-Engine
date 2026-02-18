@@ -42,6 +42,7 @@ The project follows a modular **Tiered Architecture** to keep the code clean and
 ```mermaid
 graph TD
     A[Client/Frontend] -->|POST /candidates| B(FastAPI)
+    A -->|POST /jobs| B
     A -->|GET /jobs/id/match| B
     B --> C{API Layer}
     C --> D[Service Layer]
