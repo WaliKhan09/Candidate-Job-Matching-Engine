@@ -41,8 +41,10 @@ The project follows a modular **Tiered Architecture** to keep the code clean and
 ### System Flow Diagram
 ```mermaid
 graph TD
-    A[Client/Frontend] -->|POST /candidates| B(FastAPI)
-    A -->|GET /jobs/id/match| B
+    A[Client/Frontend] -->|POST /candidates/| B(FastAPI)
+    A -->|GET /candidates/| B
+    A -->|GET /jobs/id/match/| B
+    A -->|GET/POST /candidates/| B
     B --> C{API Layer}
     C --> D[Service Layer]
     D -->|Generate Embeddings| E[Sentence-Transformers]
