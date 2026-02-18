@@ -43,7 +43,7 @@ The project follows a modular **Tiered Architecture** to keep the code clean and
 graph TD
     A[Client/Frontend] -->|POST/GET - /candidates/| B(FastAPI)
     A -->|GET /jobs/id/match/| B
-    A -->|GET/POST /candidates/| B
+    A -->|GET/POST - /candidates/| B
     B --> C{API Layer}
     C --> D[Service Layer]
     D -->|Generate Embeddings| E[Sentence-Transformers]
