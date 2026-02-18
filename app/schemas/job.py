@@ -16,7 +16,7 @@ class JobResponse(JobBase):
         from_attributes = True
 
 class MatchResponse(BaseModel):
-    candidateId: str  # Requirement: "candidateId": "uuid" (we will use stringified ID)
+    candidateId: str
     similarityScore: float
     experience: int
 

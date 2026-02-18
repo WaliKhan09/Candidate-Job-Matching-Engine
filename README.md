@@ -42,30 +42,12 @@ The project follows a modular **Tiered Architecture** to keep the code clean and
 ```mermaid
 graph TD
     A[Client/Frontend] -->|POST /candidates| B(FastAPI)
-    A -->|POST /jobs| B
     A -->|GET /jobs/id/match| B
     B --> C{API Layer}
     C --> D[Service Layer]
     D -->|Generate Embeddings| E[Sentence-Transformers]
     D -->|Vector Search| F[FAISS Index]
     D -->|Persistence| G[(SQLite DB)]
-```
-
-### Project Structure
-The code is organized into small, easy-to-read folders:
-```text
-.
-├── main.py             # The engine's ignition! Start here.
-├── app/
-│   ├── api/            # Where our API links (URLs) are defined.
-│   ├── services/       # The "Brain" - where AI and matching happens.
-│   ├── db/             # Database setup (SQLite).
-│   ├── models/         # What our data looks like in the database.
-│   ├── schemas/        # Rules for what users can send us.
-│   └── config.py       # General settings.
-├── requirements.txt    # Fast-install for all tools I used.
-└── scripts/
-    └── verify_matcher.py # My automated test script.
 ```
 
 ### Folder Breakdown

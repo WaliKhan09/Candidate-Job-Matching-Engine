@@ -5,8 +5,6 @@ import time
 BASE_URL = "http://127.0.0.1:8000"
 
 def test_matching_scenarios():
-    # print("🚀 Starting CLEAN Semantic Matching Verification...")
-    
     candidates = [
         {"name": "Alice ICU", "skill_description": "Registered nurse with 4 years ICU experience and German A2 level", "experience": 4, "location": "India"},
         {"name": "Bob General", "skill_description": "General ward nurse with experience in elderly care, no German language skills", "experience": 3, "location": "Philippines"},
@@ -88,7 +86,6 @@ def test_matching_scenarios():
 
 if __name__ == "__main__":
     try:
-        # Check if server is up
         requests.get(f"{BASE_URL}/", timeout=2)
         test_matching_scenarios()
     except Exception as e:
